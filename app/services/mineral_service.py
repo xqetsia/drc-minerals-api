@@ -102,7 +102,7 @@ def get_summary(db: Session):
     year_range = db.query(
         func.min(Mineral.year_recorded),
         func.max(Mineral.year_recorded)
-    ).scalar_one_or_none()
+    ).first()
 
     return {
         "total_active_records": total,
