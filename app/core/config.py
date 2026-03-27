@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str
     APP_ENV: str = "development"
     DEBUG: bool = True
+    API_KEY: str
 
     PROJECT_NAME: str = "DRC Minerals Production API"
     PROJECT_VERSION: str = "1.0.0"
