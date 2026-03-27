@@ -4,6 +4,21 @@ A production-grade REST API for the Democratic Republic of Congo minerals produc
 
 ---
 
+## Dataset
+The dataset was created and curated by **Qetsia Nkulu** as part of this project. Some records reference data sourced 
+from the [Enough Project](https://enoughproject.org), a non-profit organization focused on conflict minerals and human rights in Central Africa.
+
+ **Note:** The email addresses and organization names appearing in the audit trail fields (`created_by`, `updated_by`) are fake and used for illustrative purpose only. The dataset was intentionally designed to simulate real production in cloud data systems.
+
+The dataset covers mineral production records from the Democratic Republic of Congo:
+
+- **270 records** across 25 unique minerals
+- **18 provinces** including Haut-Katanga, Lualaba, and North Kivu
+- **2010–2024** year range
+- Fields include confidence scores, data quality flags, audit trails, and soft delete support
+
+---
+
 ## Tech Stack
 
 - **FastAPI** — high-performance Python web framework
@@ -148,29 +163,6 @@ python3 -m pytest tests/ -v
 ```
 
 All 13 tests run against an isolated SQLite database — your PostgreSQL data is never affected.
-
----
-
-## Dataset
-The dataset was created and curated by **Qetsia Nkulu** as part of this project. Some records reference data sourced 
-from the [Enough Project](https://enoughproject.org), a non-profit organization focused on conflict minerals and human rights in Central Africa.
-
- **Note:** The email addresses and organization names appearing in the audit trail fields (`created_by`, `updated_by`) are fictitious and used for illustrative purposes only. The dataset was intentionally designed to simulate the structure, complexity, and data quality patterns found in real production cloud data systems — including soft deletes, confidence scoring, data quality flags, and multi-source audit trails.
-
-
-The dataset covers mineral production records from the Democratic Republic of Congo:
-
-- **270 records** across 25 unique minerals
-- **18 provinces** including Haut-Katanga, Lualaba, and North Kivu
-- **2010–2024** year range
-- Fields include confidence scores, data quality flags, audit trails, and soft delete support
-The dataset covers mineral production records from the Democratic Republic of Congo:
-
-- **270 records** across 25 unique minerals
-- **18 provinces** including Haut-Katanga, Lualaba, and North Kivu
-- **2010–2024** year range
-- Fields include confidence scores, data quality flags, audit trails, and soft delete support
-
 ---
 
 ## Production Patterns Used
