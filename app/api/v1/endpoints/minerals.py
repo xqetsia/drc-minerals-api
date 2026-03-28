@@ -16,6 +16,7 @@ def get_summary(db: Session = Depends(get_db)):
 
 @router.get("/", response_model=list[MineralResponse])
 def list_minerals(
+    mineral_name: Optional[str] = Query(None),
     region: Optional[str] = Query(None),
     category: Optional[str] = Query(None),
     year: Optional[int] = Query(None),
@@ -26,7 +27,7 @@ def list_minerals(
     db: Session = Depends(get_db),
 ):
     return mineral_service.get_minerals(
-        db, region, category, year, mining_status, is_verified, skip, limit
+        db, mineral_name, region, category, year, mining_status, is_verified, skip, limit
     )
 
 

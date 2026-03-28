@@ -9,6 +9,7 @@ from app.schemas.mineral import MineralCreate, MineralUpdate
 
 def get_minerals(
     db: Session,
+    mineral_name: Optional[str] = None,
     region: Optional[str] = None,
     category: Optional[str] = None,
     year: Optional[int] = None,
@@ -18,8 +19,9 @@ def get_minerals(
     limit: int = 100,
 ):
     query = db.query(Mineral).filter(Mineral.is_active == True)
-
-    #ilike => searching "kasai" matches "kasai-Oriental"
+    # ilike => searching "kasai" matches "kasai-Oriental"
+    if mineral_name:
+        query = query.filter(Mineral.mineral_name.ilike(f"%{mineral_name}%"))
     if region:
         query = query.filter(Mineral.region_province.ilike(f"%{region}%"))
     if category:
